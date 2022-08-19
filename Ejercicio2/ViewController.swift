@@ -10,10 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textoCuenta: UITextField!
+    
+    @IBOutlet weak var sliderOutlet: UISlider!
+    
+    @IBOutlet weak var porcentaje: UILabel!
+    
+    @IBOutlet weak var soloPropina: UILabel!
+    
+    @IBOutlet weak var totalPropina: UILabel!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
+    
+    @IBAction func sliderPropina(_ sender: Any) {
+        var sliderOutlet.value = Int(sliderOutlet.value)
+        porcentaje.text = String(sliderOutlet.value)
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
