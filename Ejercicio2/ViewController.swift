@@ -11,13 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var textoCuenta: UITextField!
-    
     @IBOutlet weak var sliderOutlet: UISlider!
-    
     @IBOutlet weak var porcentaje: UILabel!
-    
     @IBOutlet weak var soloPropina: UILabel!
-    
     @IBOutlet weak var totalPropina: UILabel!
     
 
@@ -26,11 +22,23 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
     @IBAction func sliderPropina(_ sender: Any) {
-        var sliderOutlet.value = Int(sliderOutlet.value)
-        porcentaje.text = String(sliderOutlet.value)
+        
+        porcentaje.text = "\(Int(sliderOutlet.value))%"
+        
+        let cuenta = Float(textoCuenta.text!) ?? 0.0
+        let porcentajeloc = Float(Int(sliderOutlet.value))
+        let propina = cuenta * porcentajeloc / 100.0
+        let total = propina + cuenta
+        
+        soloPropina.text = String(format: "$ %.2f", propina)
+        totalPropina.text = String(format: "$ %.2f", total)
         
     }
+    
+    
     
 
     override func didReceiveMemoryWarning() {
